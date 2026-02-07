@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Advanced Responsive Layout
+   Fluid containers, grids, and responsive behavior
+   ========================================================================== */
+
+/* Container: fluid with max-width and responsive padding */
+.container {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-sm), 4vw, var(--space-xl));
+}
+
+.container--narrow {
+  max-width: 55rem;
+}
+
+.container--wide {
+  max-width: 100rem;
+}
+
+/* Main content wrapper — pushes footer down */
+.main {
+  flex: 1;
+  padding-block: var(--space-xl);
+}
+
+.theme-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Flex utilities */
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* Grid: auto-fit for fluid columns */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+}
+
+/* Editorial grid: main + sidebar */
+.editorial-layout {
+  display: grid;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (min-width: 55rem) {
+  .editorial-layout {
+    grid-template-columns: 1fr minmax(16rem, 280px);
+  }
+
+  .editorial-layout--sidebar-first {
+    grid-template-columns: minmax(16rem, 280px) 1fr;
+  }
+}
+
+/* Stack: vertical rhythm without fixed breakpoints */
+.stack > * + * {
+  margin-block-start: var(--stack-space, var(--space-md));
+}
+
+.stack--sm { --stack-space: var(--space-sm); }
+.stack--md { --stack-space: var(--space-md); }
+.stack--lg { --stack-space: var(--space-lg); }
+.stack--xl { --stack-space: var(--space-xl); }
+.stack--2xl { --stack-space: var(--space-2xl); }
+
+/* Section spacing */
+.section {
+  padding-block: clamp(var(--space-xl), 6vw, var(--space-3xl));
+}
+
+.section--tight {
+  padding-block: clamp(var(--space-lg), 4vw, var(--space-2xl));
+}
+
+/* Visibility by viewport (for nav patterns) */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Aspect ratios for media */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-card {
+  aspect-ratio: 3 / 2;
+}
+
+/* Full-bleed within container */
+.bleed {
+  width: 100vw;
+  margin-inline: calc(-50vw + 50%);
+  padding-inline: clamp(var(--space-sm), 4vw, var(--space-xl));
+}
+
+/* Reading width for long-form */
+.reading-flow {
+  max-width: var(--line-length);
+  margin-inline: auto;
+}
+
+.reading-flow--wide {
+  max-width: 75ch;
+}

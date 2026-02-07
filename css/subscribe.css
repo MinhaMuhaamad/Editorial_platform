@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Multi-Step Interactive Interface (CSS-Driven)
+   Progress indicator, steps, states, completion — no JavaScript
+   ========================================================================== */
+
+.subscribe-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-2xl);
+}
+
+.subscribe-page__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.subscribe-page__bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subscribe-page__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.subscribe-page__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.theme-wrapper:has(#theme-light:checked) .subscribe-page__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 22, 17, 0.7) 0%,
+    rgba(26, 22, 17, 0.5) 50%,
+    rgba(26, 22, 17, 0.75) 100%
+  );
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .subscribe-page__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.82) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.subscribe-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 32rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .subscribe-card {
+  background: rgba(10, 10, 10, 0.95);
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-border), 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Progress bar (visual only, reflects step via CSS) */
+.progress {
+  display: flex;
+  background: var(--color-bg-muted);
+}
+
+.progress__segment {
+  flex: 1;
+  height: 4px;
+  background: var(--color-border);
+  transition: background var(--transition-base);
+}
+
+/* When step 2 is active, segment 1 is complete; when step 3, 1+2 complete; etc. */
+.step-container:has(#step-2:checked) .progress__segment:nth-child(1),
+.step-container:has(#step-3:checked) .progress__segment:nth-child(1),
+.step-container:has(#step-3:checked) .progress__segment:nth-child(2),
+.step-container:has(#step-4:checked) .progress__segment:nth-child(1),
+.step-container:has(#step-4:checked) .progress__segment:nth-child(2),
+.step-container:has(#step-4:checked) .progress__segment:nth-child(3) {
+  background: var(--color-accent);
+}
+
+/* Step panels: only show the active one */
+.step-panel {
+  display: none;
+  padding: var(--space-xl);
+  animation: stepIn 0.35s ease-out;
+}
+
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-panel {
+    animation: none;
+  }
+}
+
+.step-container:has(#step-1:checked) .step-panel--1,
+.step-container:has(#step-2:checked) .step-panel--2,
+.step-container:has(#step-3:checked) .step-panel--3,
+.step-container:has(#step-4:checked) .step-panel--4 {
+  display: block;
+}
+
+/* Step indicators (labels as tabs) */
+.step-nav {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 var(--space-md);
+  gap: 0;
+}
+
+.step-nav input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.step-nav label {
+  padding: var(--space-md) var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.step-nav label:hover {
+  color: var(--color-text);
+}
+
+.step-nav input:checked + label {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .step-nav input#step-2:checked + label {
+  color: var(--color-contrast-cyan);
+  border-bottom-color: var(--color-contrast-cyan);
+}
+.theme-wrapper:has(#theme-contrast:checked) .step-nav input#step-3:checked + label,
+.theme-wrapper:has(#theme-contrast:checked) .step-nav input#step-4:checked + label {
+  color: var(--color-contrast-green);
+  border-bottom-color: var(--color-contrast-green);
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .progress__segment:nth-child(1) {
+  background: var(--color-border);
+}
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-2:checked) .progress__segment:nth-child(1),
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-3:checked) .progress__segment:nth-child(1),
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-4:checked) .progress__segment:nth-child(1) {
+  background: var(--color-accent);
+}
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-3:checked) .progress__segment:nth-child(2),
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-4:checked) .progress__segment:nth-child(2) {
+  background: var(--color-contrast-cyan);
+}
+.theme-wrapper:has(#theme-contrast:checked) .step-container:has(#step-4:checked) .progress__segment:nth-child(3) {
+  background: var(--color-contrast-green);
+}
+
+.step-nav input:focus-visible + label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Disabled state: steps 2 and 3 until previous is "done" (we show all as clickable but style disabled) */
+.step-nav input:disabled + label {
+  color: var(--color-text-faint);
+  cursor: not-allowed;
+}
+
+.step-panel__title {
+  margin-bottom: var(--space-sm);
+}
+
+.step-panel__desc {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: var(--space-lg);
+}
+
+.step-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.step-actions .btn {
+  flex: 1;
+  min-width: 8rem;
+}
+
+/* Completion state */
+.step-panel--4 {
+  text-align: center;
+}
+
+.step-panel--4 .success-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.step-panel--4 .btn {
+  margin-top: var(--space-md);
+}

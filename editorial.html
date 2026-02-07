@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumina Editorial — Read blogs and contribute your writing.">
+  <title>Editorial — Lumina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="theme-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <a href="main.html" class="site-header__brand">Lumina</a>
+        <input type="checkbox" id="nav-toggle-editorial" class="nav-toggle" aria-label="Toggle menu">
+        <div class="site-header__nav-wrap">
+          <nav class="nav" aria-label="Main navigation">
+            <a href="main.html" class="nav__link">Home</a>
+            <a href="article.html" class="nav__link">Story</a>
+            <a href="editorial.html" class="nav__link" aria-current="page">Editorial</a>
+            <a href="subscribe.html" class="nav__link">Subscribe</a>
+          </nav>
+          <div class="theme-toggle" role="group" aria-label="Theme selection">
+            <input type="radio" name="theme" id="theme-dark" aria-label="Dark theme">
+            <label for="theme-dark">Dark</label>
+            <input type="radio" name="theme" id="theme-light" checked aria-label="Light theme">
+            <label for="theme-light">Light</label>
+            <input type="radio" name="theme" id="theme-contrast" aria-label="High contrast theme">
+            <label for="theme-contrast">Contrast</label>
+          </div>
+        </div>
+        <label for="nav-toggle-editorial" class="nav-toggle-label" aria-hidden="true"><span></span><span></span><span></span></label>
+      </div>
+    </header>
+
+    <main id="main-content" class="main editorial-page">
+      <section class="editorial-hero section">
+        <div class="container">
+          <h1 class="editorial-hero__title">Editorial</h1>
+          <p class="editorial-hero__sub">Read community essays and long-form pieces, or contribute your own writing.</p>
+          <div class="editorial-hero__actions">
+            <a href="#read" class="btn btn--primary btn--large">Read blogs</a>
+            <a href="write.html" class="btn btn--secondary btn--large">Write a piece</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section editorial-read" id="read" aria-labelledby="read-title">
+        <div class="container">
+          <h2 id="read-title" class="featured__title">Read blogs</h2>
+          <p class="reading-flow" style="color: var(--color-text-muted); margin-bottom: var(--space-xl);">Browse our editorial collection. Each piece is crafted for slow, attentive reading.</p>
+          <div class="grid grid--3">
+            <article class="card card--animate">
+              <a href="article.html" class="card__media">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop" alt="Workspace" width="600" height="400">
+              </a>
+              <div class="card__body">
+                <span class="badge">Editorial</span>
+                <h3 class="card__title"><a href="article.html">The future of digital reading</a></h3>
+                <p class="card__meta">12 min read</p>
+              </div>
+            </article>
+            <article class="card card--animate">
+              <a href="article.html" class="card__media">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop" alt="Typewriter" width="600" height="400">
+              </a>
+              <div class="card__body">
+                <span class="badge">Culture</span>
+                <h3 class="card__title"><a href="article.html">Why we still need slow media</a></h3>
+                <p class="card__meta">8 min read</p>
+              </div>
+            </article>
+            <article class="card card--animate">
+              <a href="article.html" class="card__media">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=400&fit=crop" alt="Books" width="600" height="400">
+              </a>
+              <div class="card__body">
+                <span class="badge">Ideas</span>
+                <h3 class="card__title"><a href="article.html">Building a personal canon</a></h3>
+                <p class="card__meta">6 min read</p>
+              </div>
+            </article>
+            <article class="card card--animate">
+              <a href="article.html" class="card__media">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Writer" width="600" height="400">
+              </a>
+              <div class="card__body">
+                <span class="badge">Essay</span>
+                <h3 class="card__title"><a href="article.html">The art of the slow read</a></h3>
+                <p class="card__meta">5 min read</p>
+              </div>
+            </article>
+            <article class="card card--animate">
+              <a href="article.html" class="card__media">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop" alt="Library" width="600" height="400">
+              </a>
+              <div class="card__body">
+                <span class="badge">Ideas</span>
+                <h3 class="card__title"><a href="article.html">Curating your reading list</a></h3>
+                <p class="card__meta">7 min read</p>
+              </div>
+            </article>
+            <article class="card card--animate editorial-write-cta">
+              <a href="write.html" class="card__media card__media--placeholder">
+                <span class="card__media-placeholder-text">Write</span>
+              </a>
+              <div class="card__body">
+                <span class="badge">Contribute</span>
+                <h3 class="card__title"><a href="write.html">Submit your own piece</a></h3>
+                <p class="card__meta">Start writing</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cta">
+        <div class="container">
+          <h2 class="section-cta__title">Have something to say?</h2>
+          <p class="section-cta__text">We welcome thoughtful essays and long-form narratives. Start with a draft on our Write page.</p>
+          <a href="write.html" class="btn btn--primary btn--large">Go to Write</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <h3 class="site-footer__title">Platform</h3>
+            <ul>
+              <li><a href="main.html">Home</a></li>
+              <li><a href="article.html">Story</a></li>
+              <li><a href="editorial.html">Editorial</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="site-footer__title">Legal</h3>
+            <ul>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="site-footer__title">Connect</h3>
+            <ul>
+              <li><a href="main.html#main-content">Newsletter</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>Lumina Editorial. HTML &amp; CSS only — no JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

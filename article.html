@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -16,11 +17,13 @@
   <div class="theme-wrapper">
     <header class="site-header">
       <div class="container">
-        <a href="index.html" class="site-header__brand">Lumina</a>
+        <a href="main.html" class="site-header__brand">Lumina</a>
+        <input type="checkbox" id="nav-toggle-article" class="nav-toggle" aria-label="Toggle menu">
         <div class="site-header__nav-wrap">
           <nav class="nav" aria-label="Main navigation">
-            <a href="index.html" class="nav__link">Home</a>
+            <a href="main.html" class="nav__link">Home</a>
             <a href="article.html" class="nav__link" aria-current="page">Story</a>
+            <a href="editorial.html" class="nav__link">Editorial</a>
             <a href="subscribe.html" class="nav__link">Subscribe</a>
           </nav>
           <div class="theme-toggle" role="group" aria-label="Theme selection">
@@ -32,6 +35,7 @@
             <label for="theme-contrast">Contrast</label>
           </div>
         </div>
+        <label for="nav-toggle-article" class="nav-toggle-label" aria-hidden="true"><span></span><span></span><span></span></label>
       </div>
     </header>
 
@@ -118,21 +122,29 @@
           <div>
             <h3 class="site-footer__title">Platform</h3>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="main.html">Home</a></li>
               <li><a href="article.html">Story</a></li>
+              <li><a href="editorial.html">Editorial</a></li>
               <li><a href="subscribe.html">Subscribe</a></li>
             </ul>
           </div>
           <div>
             <h3 class="site-footer__title">Legal</h3>
             <ul>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="site-footer__title">Connect</h3>
+            <ul>
+              <li><a href="main.html#main-content">Newsletter</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>
         <div class="site-footer__bottom">
-          <p>Lumina Editorial.</p>
+          <p>Lumina Editorial. Theme, reading time &amp; progress powered by JavaScript.</p>
         </div>
       </div>
     </footer>

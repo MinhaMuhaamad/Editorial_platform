@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Write and submit your piece — Lumina Editorial.">
+  <title>Write — Lumina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="theme-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <a href="main.html" class="site-header__brand">Lumina</a>
+        <input type="checkbox" id="nav-toggle-write" class="nav-toggle" aria-label="Toggle menu">
+        <div class="site-header__nav-wrap">
+          <nav class="nav" aria-label="Main navigation">
+            <a href="main.html" class="nav__link">Home</a>
+            <a href="article.html" class="nav__link">Story</a>
+            <a href="editorial.html" class="nav__link">Editorial</a>
+            <a href="subscribe.html" class="nav__link">Subscribe</a>
+          </nav>
+          <div class="theme-toggle" role="group" aria-label="Theme selection">
+            <input type="radio" name="theme" id="theme-dark" aria-label="Dark theme">
+            <label for="theme-dark">Dark</label>
+            <input type="radio" name="theme" id="theme-light" checked aria-label="Light theme">
+            <label for="theme-light">Light</label>
+            <input type="radio" name="theme" id="theme-contrast" aria-label="High contrast theme">
+            <label for="theme-contrast">Contrast</label>
+          </div>
+        </div>
+        <label for="nav-toggle-write" class="nav-toggle-label" aria-hidden="true"><span></span><span></span><span></span></label>
+      </div>
+    </header>
+
+    <main id="main-content" class="main write-page">
+      <section class="section write-hero">
+        <div class="container container--narrow">
+          <h1 class="write-hero__title">Write</h1>
+          <p class="write-hero__sub">Compose your piece. This is a demo form — submission is not processed.</p>
+        </div>
+      </section>
+
+      <section class="section write-form-section">
+        <div class="container container--narrow">
+          <form class="write-form" action="#" method="get" aria-label="Compose article">
+            <div class="input-group stack--md">
+              <label for="write-title">Title</label>
+              <input type="text" id="write-title" class="input" placeholder="Your article title" autocomplete="off" required>
+            </div>
+            <div class="input-group stack--md">
+              <label for="write-subtitle">Subtitle or byline (optional)</label>
+              <input type="text" id="write-subtitle" class="input" placeholder="A short line under the title" autocomplete="off">
+            </div>
+            <div class="input-group stack--md">
+              <label for="write-body">Body</label>
+              <textarea id="write-body" class="textarea" rows="14" placeholder="Start writing your piece here. Take your time."></textarea>
+            </div>
+            <div class="input-group stack--md">
+              <label for="write-category">Category</label>
+              <select id="write-category" class="select" aria-label="Category">
+                <option value="">Select category</option>
+                <option value="editorial">Editorial</option>
+                <option value="essay">Essay</option>
+                <option value="culture">Culture</option>
+                <option value="ideas">Ideas</option>
+              </select>
+            </div>
+            <div class="write-form__actions">
+              <a href="editorial.html" class="btn btn--ghost">Cancel</a>
+              <button type="submit" class="btn btn--primary btn--large">Save draft</button>
+            </div>
+          </form>
+          <div class="alert alert--info" style="margin-top: var(--space-xl);" role="status">
+            <span aria-hidden="true">ℹ</span>
+            <span>This is a CSS-only demo. No data is sent. Use the theme switcher in the header to try different visual themes.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <h3 class="site-footer__title">Platform</h3>
+            <ul>
+              <li><a href="main.html">Home</a></li>
+              <li><a href="article.html">Story</a></li>
+              <li><a href="editorial.html">Editorial</a></li>
+              <li><a href="subscribe.html">Subscribe</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="site-footer__title">Legal</h3>
+            <ul>
+              <li><a href="#privacy">Privacy</a></li>
+              <li><a href="#terms">Terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="site-footer__title">Connect</h3>
+            <ul>
+              <li><a href="main.html#main-content">Newsletter</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>Lumina Editorial. HTML &amp; CSS only — no JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

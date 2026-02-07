@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Editorial page & Write page
+   ========================================================================== */
+
+.editorial-page .editorial-hero__title,
+.write-page .write-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: var(--space-sm);
+}
+
+.editorial-hero__sub,
+.write-hero__sub {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  max-width: 45ch;
+  margin-bottom: var(--space-xl);
+}
+
+.editorial-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.write-hero {
+  padding-bottom: var(--space-md);
+}
+
+.write-form-section {
+  padding-top: 0;
+}
+
+.write-form .stack--md {
+  margin-bottom: var(--space-lg);
+}
+
+.write-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+/* Editorial grid: placeholder card for "Write" CTA */
+.card__media--placeholder {
+  aspect-ratio: 3 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-subtle);
+  border: 2px dashed var(--color-accent-muted);
+}
+
+.card__media-placeholder-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.editorial-write-cta .card__title a:hover {
+  color: var(--color-accent);
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .card__media--placeholder {
+  border-color: var(--color-accent);
+  background: var(--color-accent-muted);
+}
