@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Subscribe to Lumina — choose your plan and get full access.">
+  <title>Subscribe — Lumina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="theme-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="site-header__brand">Lumina</a>
+        <div class="site-header__nav-wrap">
+          <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav__link">Home</a>
+            <a href="article.html" class="nav__link">Story</a>
+            <a href="subscribe.html" class="nav__link" aria-current="page">Subscribe</a>
+          </nav>
+          <div class="theme-toggle" role="group" aria-label="Theme selection">
+            <input type="radio" name="theme" id="theme-dark" checked aria-label="Dark theme">
+            <label for="theme-dark">Dark</label>
+            <input type="radio" name="theme" id="theme-light" aria-label="Light theme">
+            <label for="theme-light">Light</label>
+            <input type="radio" name="theme" id="theme-contrast" aria-label="High contrast theme">
+            <label for="theme-contrast">Contrast</label>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="main subscribe-page">
+      <div class="subscribe-page__bg" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=80" alt="">
+        <video class="subscribe-page__video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=80">
+          <source src="https://cdn.coverr.co/videos/coverr/person-reading-a-book-while-sitting-on-a-chair-4777467/4777467_preview.mp4" type="video/mp4">
+        </video>
+        <span class="subscribe-page__overlay"></span>
+      </div>
+      <div class="subscribe-card step-container">
+        <div class="progress" role="presentation" aria-hidden="true">
+          <span class="progress__segment" aria-hidden="true"></span>
+          <span class="progress__segment" aria-hidden="true"></span>
+          <span class="progress__segment" aria-hidden="true"></span>
+        </div>
+
+        <nav class="step-nav" aria-label="Subscription steps">
+          <input type="radio" name="step" id="step-1" checked aria-label="Step 1: Welcome">
+          <label for="step-1">Welcome</label>
+          <input type="radio" name="step" id="step-2" aria-label="Step 2: Plan">
+          <label for="step-2">Plan</label>
+          <input type="radio" name="step" id="step-3" aria-label="Step 3: Details">
+          <label for="step-3">Details</label>
+          <input type="radio" name="step" id="step-4" aria-label="Step 4: Done">
+          <label for="step-4">Done</label>
+        </nav>
+
+        <div class="step-panel step-panel--1">
+          <h2 class="step-panel__title">Welcome</h2>
+          <p class="step-panel__desc">Start your subscription in a few steps. You can move forward and back using the tabs above.</p>
+          <div class="input-group stack--md">
+            <label for="email-welcome">Email</label>
+            <input type="email" id="email-welcome" class="input" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="step-actions">
+            <label for="step-2" class="btn btn--primary">Continue</label>
+          </div>
+        </div>
+
+        <div class="step-panel step-panel--2">
+          <h2 class="step-panel__title">Choose a plan</h2>
+          <p class="step-panel__desc">Select the option that fits you. You can change it later.</p>
+          <div class="stack--md" style="margin-bottom: var(--space-lg);">
+            <label class="card" style="cursor: pointer; display: block;">
+              <input type="radio" name="plan" value="monthly" class="input" style="width: auto; margin: var(--space-md);" checked>
+              <span style="padding: var(--space-md); padding-left: 0;">
+                <strong>Monthly</strong> — $6/month, cancel anytime
+              </span>
+            </label>
+            <label class="card" style="cursor: pointer; display: block;">
+              <input type="radio" name="plan" value="yearly" class="input" style="width: auto; margin: var(--space-md);">
+              <span style="padding: var(--space-md); padding-left: 0;">
+                <strong>Yearly</strong> — $50/year (save 30%)
+              </span>
+            </label>
+          </div>
+          <div class="step-actions">
+            <label for="step-1" class="btn btn--secondary">Back</label>
+            <label for="step-3" class="btn btn--primary">Continue</label>
+          </div>
+        </div>
+
+        <div class="step-panel step-panel--3">
+          <h2 class="step-panel__title">Confirm details</h2>
+          <p class="step-panel__desc">Review and confirm. This is a demo — no payment is processed.</p>
+          <div class="input-group stack--md">
+            <label for="name-confirm">Full name</label>
+            <input type="text" id="name-confirm" class="input" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="alert alert--info" style="margin-top: var(--space-md);" role="status">
+            <span aria-hidden="true">ℹ</span>
+            <span>Your subscription will start immediately after you complete the final step.</span>
+          </div>
+          <div class="step-actions">
+            <label for="step-2" class="btn btn--secondary">Back</label>
+            <label for="step-4" class="btn btn--primary">Complete</label>
+          </div>
+        </div>
+
+        <div class="step-panel step-panel--4">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2 class="step-panel__title">You're all set</h2>
+          <p class="step-panel__desc">Thank you for subscribing. You now have full access to Lumina. We've sent a confirmation to your email (in this demo, no email is actually sent).</p>
+          <div class="step-actions" style="justify-content: center;">
+            <a href="index.html" class="btn btn--primary">Go to homepage</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__bottom">
+          <p> Lumina Editorial. This flow is CSS-only — no JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
