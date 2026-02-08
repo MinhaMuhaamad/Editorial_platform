@@ -1,9 +1,4 @@
-/* ==========================================================================
-   Advanced Responsive Layout
-   Fluid containers, grids, and responsive behavior
-   ========================================================================== */
 
-/* Container: fluid with max-width and responsive padding */
 .container {
   width: 100%;
   max-width: 90rem;
@@ -19,7 +14,7 @@
   max-width: 100rem;
 }
 
-/* Main content wrapper — pushes footer down */
+
 .main {
   flex: 1;
   padding-block: var(--space-xl);
@@ -31,7 +26,7 @@
   min-height: 100vh;
 }
 
-/* Flex utilities */
+
 .flex { display: flex; }
 .flex-wrap { flex-wrap: wrap; }
 .flex-col { flex-direction: column; }
@@ -46,7 +41,6 @@
 .gap-lg { gap: var(--space-lg); }
 .gap-xl { gap: var(--space-xl); }
 
-/* Grid: auto-fit for fluid columns */
 .grid {
   display: grid;
   gap: var(--space-lg);
@@ -64,7 +58,7 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
 }
 
-/* Editorial grid: main + sidebar */
+
 .editorial-layout {
   display: grid;
   gap: var(--space-2xl);
@@ -81,7 +75,7 @@
   }
 }
 
-/* Stack: vertical rhythm without fixed breakpoints */
+
 .stack > * + * {
   margin-block-start: var(--stack-space, var(--space-md));
 }
@@ -92,7 +86,7 @@
 .stack--xl { --stack-space: var(--space-xl); }
 .stack--2xl { --stack-space: var(--space-2xl); }
 
-/* Section spacing */
+
 .section {
   padding-block: clamp(var(--space-xl), 6vw, var(--space-3xl));
 }
@@ -101,7 +95,7 @@
   padding-block: clamp(var(--space-lg), 4vw, var(--space-2xl));
 }
 
-/* Visibility by viewport (for nav patterns) */
+
 .hide-mobile {
   display: none;
 }
@@ -116,7 +110,7 @@
   }
 }
 
-/* Aspect ratios for media */
+
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
@@ -129,14 +123,14 @@
   aspect-ratio: 3 / 2;
 }
 
-/* Full-bleed within container */
+
 .bleed {
   width: 100vw;
   margin-inline: calc(-50vw + 50%);
   padding-inline: clamp(var(--space-sm), 4vw, var(--space-xl));
 }
 
-/* Reading width for long-form */
+
 .reading-flow {
   max-width: var(--line-length);
   margin-inline: auto;

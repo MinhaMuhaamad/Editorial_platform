@@ -1,7 +1,4 @@
-/**
- * Lumina — Smart Reader Experience
- * Vanilla JS: theme persistence, reading time, scroll progress.
- */
+
 
 (function () {
   'use strict';
@@ -9,9 +6,7 @@
   const THEME_STORAGE_KEY = 'lumina-theme';
   const WORDS_PER_MINUTE = 200;
 
-  // =========================================================================
-  // THEME PERSISTENCE ENGINE
-  // =========================================================================
+  
 
   function getStoredTheme() {
     try {
@@ -60,9 +55,7 @@
     });
   }
 
-  // =========================================================================
-  // TIME-TO-READ CALCULATOR
-  // =========================================================================
+  
 
   function getTextFromNode(node) {
     if (!node) return '';
@@ -97,28 +90,24 @@
   }
 
   function injectReadingTime() {
-    // Try to find article body first
     var articleBody = document.querySelector('.article-body');
     var headerInner = document.querySelector('.article-header__inner');
     
     if (!articleBody || !headerInner) {
-      return; // Exit silently if we're not on an article page
+      return;
     }
 
-    // Extract all text from article body
     var text = getTextFromNode(articleBody);
     var wordCount = countWords(text);
     var minutes = calculateReadingTime(wordCount);
     var label = minutes === 1 ? '1 min read' : minutes + ' min read';
 
-    // Check if reading time already exists
     var existing = headerInner.querySelector('.article-header__read-time');
     if (existing) {
       existing.textContent = label;
       return;
     }
 
-    // Create and inject reading time element
     var readTimeEl = document.createElement('p');
     readTimeEl.className = 'article-header__read-time';
     readTimeEl.setAttribute('aria-label', 'Estimated reading time');
@@ -126,9 +115,7 @@
     headerInner.appendChild(readTimeEl);
   }
 
-  // =========================================================================
-  // READING PROGRESS BAR
-  // =========================================================================
+  
 
   function createProgressBar() {
     var bar = document.createElement('div');
@@ -176,7 +163,7 @@
   }
 
   function initReadingProgress() {
-    // Only init on article pages
+    
     if (!document.querySelector('.article-page')) {
       return;
     }
@@ -196,23 +183,21 @@
       }
     }
 
-    // Initial update
+   
     updateProgressBar(fill, bar);
     
-    // Listen for scroll events
+    
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // =========================================================================
-  // INITIALIZATION
-  // =========================================================================
+  
 
   function init() {
-    // Initialize theme system
+   
     applyThemeFromStorage();
     bindThemeSwitcher();
 
-    // Initialize article features
+   
     if (document.querySelector('.article-body')) {
       injectReadingTime();
     }
@@ -222,7 +207,7 @@
     }
   }
 
-  // Run on DOM ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
