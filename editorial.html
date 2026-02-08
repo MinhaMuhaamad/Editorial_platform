@@ -39,88 +39,198 @@
       </div>
     </header>
 
-    <main id="main-content" class="main editorial-page">
-      <section class="editorial-hero section">
-        <div class="container">
-          <h1 class="editorial-hero__title">Editorial</h1>
-          <p class="editorial-hero__sub">Read community essays and long-form pieces, or contribute your own writing.</p>
+    <main id="main-content" class="main editorial-page article-page">
+      <!-- ENHANCED HERO WITH IMAGE SLIDER -->
+      <section class="editorial-hero section editorial-hero--enhanced">
+        <div class="editorial-hero__slider" aria-label="Featured articles carousel">
+          <div class="slider-track">
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=600&fit=crop" alt="Digital reading workspace">
+            </div>
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=600&fit=crop" alt="Typewriter and reflection">
+            </div>
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&h=600&fit=crop" alt="Literary collection">
+            </div>
+          </div>
+          <div class="slider-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="container editorial-hero__content">
+          <div class="editorial-hero__badge">Explore Ideas</div>
+          <h1 class="editorial-hero__title">Editorial Excellence</h1>
+          <p class="editorial-hero__subtitle">Discover thoughtfully crafted essays, narratives, and perspectives from our community of contributors.</p>
           <div class="editorial-hero__actions">
-            <a href="#read" class="btn btn--primary btn--large">Read blogs</a>
-            <a href="write.html" class="btn btn--secondary btn--large">Write a piece</a>
+            <a href="#read" class="btn btn--primary btn--large">Read Collection</a>
+            <a href="write.html" class="btn btn--secondary btn--large">Contribute</a>
+          </div>
+          
+          <div class="slider-dots" aria-label="Slide indicators">
+            <button class="slider-dot active" aria-label="View slide 1" data-slide="0"></button>
+            <button class="slider-dot" aria-label="View slide 2" data-slide="1"></button>
+            <button class="slider-dot" aria-label="View slide 3" data-slide="2"></button>
           </div>
         </div>
       </section>
 
+      <!-- FEATURED STATS SECTION -->
+      <section class="editorial-stats section">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">250+</div>
+              <div class="stat-label">Published Pieces</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">180K</div>
+              <div class="stat-label">Monthly Readers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">45</div>
+              <div class="stat-label">Active Contributors</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAIN EDITORIAL GRID -->
       <section class="section editorial-read" id="read" aria-labelledby="read-title">
         <div class="container">
-          <h2 id="read-title" class="featured__title">Read blogs</h2>
-          <p class="reading-flow" style="color: var(--color-text-muted); margin-bottom: var(--space-xl);">Browse our editorial collection. Each piece is crafted for slow, attentive reading.</p>
+          <div class="section-header">
+            <h2 id="read-title" class="featured__title">Recent Pieces</h2>
+            <p class="section-description">Curated stories and long-form narratives for discerning readers.</p>
+          </div>
           <div class="grid grid--3">
-            <article class="card card--animate">
+            <article class="card card--animate card--editorial">
               <a href="article.html" class="card__media">
                 <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop" alt="Workspace" width="600" height="400">
               </a>
               <div class="card__body">
                 <span class="badge">Editorial</span>
                 <h3 class="card__title"><a href="article.html">The future of digital reading</a></h3>
-                <p class="card__meta">12 min read</p>
+                <p class="card__meta">12 min read · 3 days ago</p>
+                <p class="card__excerpt">How typography, space, and intention can restore depth to how we read online.</p>
               </div>
             </article>
-            <article class="card card--animate">
+            <article class="card card--animate card--editorial">
               <a href="article.html" class="card__media">
                 <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=400&fit=crop" alt="Typewriter" width="600" height="400">
               </a>
               <div class="card__body">
                 <span class="badge">Culture</span>
                 <h3 class="card__title"><a href="article.html">Why we still need slow media</a></h3>
-                <p class="card__meta">8 min read</p>
+                <p class="card__meta">8 min read · 1 week ago</p>
+                <p class="card__excerpt">In a world of endless content, the value of intentional publishing has never been clearer.</p>
               </div>
             </article>
-            <article class="card card--animate">
+            <article class="card card--animate card--editorial">
               <a href="article.html" class="card__media">
                 <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=400&fit=crop" alt="Books" width="600" height="400">
               </a>
               <div class="card__body">
                 <span class="badge">Ideas</span>
                 <h3 class="card__title"><a href="article.html">Building a personal canon</a></h3>
-                <p class="card__meta">6 min read</p>
+                <p class="card__meta">6 min read · 2 weeks ago</p>
+                <p class="card__excerpt">How to curate your reading list with intention and discover voices that resonate with you.</p>
               </div>
             </article>
-            <article class="card card--animate">
+            <article class="card card--animate card--editorial">
               <a href="article.html" class="card__media">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Writer" width="600" height="400">
               </a>
               <div class="card__body">
                 <span class="badge">Essay</span>
                 <h3 class="card__title"><a href="article.html">The art of the slow read</a></h3>
-                <p class="card__meta">5 min read</p>
+                <p class="card__meta">5 min read · 3 weeks ago</p>
+                <p class="card__excerpt">Techniques for deeper engagement with text in an age of skimming and scanning.</p>
               </div>
             </article>
-            <article class="card card--animate">
+            <article class="card card--animate card--editorial">
               <a href="article.html" class="card__media">
                 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop" alt="Library" width="600" height="400">
               </a>
               <div class="card__body">
                 <span class="badge">Ideas</span>
                 <h3 class="card__title"><a href="article.html">Curating your reading list</a></h3>
-                <p class="card__meta">7 min read</p>
+                <p class="card__meta">7 min read · 1 month ago</p>
+                <p class="card__excerpt">A practical guide to building a collection of books that shape your thinking.</p>
               </div>
             </article>
             <article class="card card--animate editorial-write-cta">
               <a href="write.html" class="card__media card__media--placeholder">
-                <span class="card__media-placeholder-text">Write</span>
+                <span class="card__media-placeholder-icon">✎</span>
               </a>
               <div class="card__body">
-                <span class="badge">Contribute</span>
+                <span class="badge badge--accent">Contribute</span>
                 <h3 class="card__title"><a href="write.html">Submit your own piece</a></h3>
-                <p class="card__meta">Start writing</p>
+                <p class="card__meta">Start writing your story</p>
+                <p class="card__excerpt">Share your voice with our engaged community of readers and writers.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-cta">
+      <!-- EDITORIAL CATEGORIES -->
+      <section class="editorial-categories section">
+        <div class="container">
+          <h2 class="section-title">Browse by Category</h2>
+          <div class="categories-grid">
+            <a href="#" class="category-card">
+              <span class="category-icon">📖</span>
+              <h3>Essays</h3>
+              <p>23 pieces</p>
+            </a>
+            <a href="#" class="category-card">
+              <span class="category-icon">🎨</span>
+              <h3>Culture</h3>
+              <p>18 pieces</p>
+            </a>
+            <a href="#" class="category-card">
+              <span class="category-icon">💡</span>
+              <h3>Ideas</h3>
+              <p>31 pieces</p>
+            </a>
+            <a href="#" class="category-card">
+              <span class="category-icon">✍️</span>
+              <h3>Personal</h3>
+              <p>14 pieces</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTRIBUTOR SPOTLIGHT -->
+      <section class="contributor-spotlight section">
+        <div class="container">
+          <h2 class="section-title">Featured Contributor</h2>
+          <div class="contributor-card">
+            <div class="contributor-image">
+              <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=200&h=200&fit=crop" alt="Featured contributor">
+            </div>
+            <div class="contributor-content">
+              <h3 class="contributor-name">Sarah Mitchell</h3>
+              <p class="contributor-title">Editorial Director</p>
+              <p class="contributor-bio">Sarah has been writing about digital culture and publishing for over a decade. Her work explores the intersection of design, technology, and human experience.</p>
+              <div class="contributor-stats">
+                <div class="stat">
+                  <span class="stat-value">12</span>
+                  <span class="stat-name">Published</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">45K</span>
+                  <span class="stat-name">Readers</span>
+                </div>
+              </div>
+              <a href="#" class="btn btn--ghost">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="section section-cta editorial-cta">
         <div class="container">
           <h2 class="section-cta__title">Have something to say?</h2>
           <p class="section-cta__text">We welcome thoughtful essays and long-form narratives. Start with a draft on our Write page.</p>
@@ -157,10 +267,56 @@
           </div>
         </div>
         <div class="site-footer__bottom">
-          <p>Lumina Editorial. HTML &amp; CSS only — no JavaScript.</p>
+          <p>Lumina Editorial. Theme, reading time &amp; progress powered by JavaScript.</p>
         </div>
       </div>
     </footer>
   </div>
+
+  <script>
+    // Image slider functionality
+    (function() {
+      const slides = document.querySelectorAll('.slider-slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      let currentSlide = 0;
+      const slideInterval = 5000; // 5 seconds
+
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[n].classList.add('active');
+        dots[n].classList.add('active');
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance slides
+      setInterval(nextSlide, slideInterval);
+
+      // Manual dot navigation
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      // Initialize
+      showSlide(0);
+    })();
+
+    // Check if localStorage is saving
+    localStorage.setItem('lumina-theme', 'dark');
+    console.log(localStorage.getItem('lumina-theme')); // Should print: dark
+
+    // Check if radio buttons exist
+    console.log(document.getElementById('theme-dark')); // Should print the element
+    console.log(document.getElementById('theme-light')); // Should print the element
+    console.log(document.getElementById('theme-contrast')); // Should print the element
+  </script>
 </body>
 </html>
