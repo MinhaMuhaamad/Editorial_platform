@@ -86,7 +86,144 @@
   font-size: 0.9375rem;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
+.article-hero {
+  position: relative;
+  height: 80vh; /* Adjust for that majestic look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
 
+.article-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.article-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  animation: slowScroll 20s infinite alternate;
+}
+
+@keyframes slowScroll {
+  to { transform: scale(1); }
+}
+
+.article-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-body));
+  z-index: 2;
+}
+
+.article-hero__inner {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+}
+
+/* --- EDITORIAL TYPOGRAPHY --- */
+.container--narrow {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.editorial-section {
+  padding-block: 6rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Scroll Animation Trigger (CSS Only - View Timeline) */
+@supports (animation-timeline: view()) {
+  .editorial-section {
+      animation: revealSection linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+  }
+}
+
+@keyframes revealSection {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-num {
+  display: block;
+  font-family: monospace;
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+.section-head {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* --- STICKY REVEAL SECTION --- */
+.sticky-reveal {
+  position: relative;
+  height: 200vh; /* Extra height for scroll effect */
+  margin-block: 5rem;
+}
+
+.sticky-reveal__img {
+  position: sticky;
+  top: 15vh;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.sticky-reveal__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticky-reveal__content {
+  position: relative;
+  z-index: 5;
+  margin-top: -30vh;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.reveal-card {
+  background: var(--bg-header);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  max-width: 400px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.aesthetic-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-style: italic;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 2rem;
+  margin: 4rem 0;
+  color: var(--text-main);
+}
+
+/* --- FOOTER CTA --- */
+.article-footer-cta {
+  background: var(--bg-header);
+  padding: 100px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
 .theme-wrapper:has(#theme-light:checked) .article-header__byline {
   text-shadow: none;
 }
