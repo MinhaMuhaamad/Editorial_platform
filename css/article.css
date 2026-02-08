@@ -1,5 +1,3 @@
-
-
 .article-page {
   padding-block: 0;
 }
@@ -254,8 +252,10 @@
 }
 
 .theme-wrapper:has(#theme-contrast:checked) .article-header__read-time {
-  color: var(--color-accent);
+  color: #e8b4a8;
   font-weight: 600;
+  border-left: 2px solid #e8b4a8;
+  padding-left: 0.75em;
 }
 
 /* Reading progress bar — fixed at top, fills on scroll */
@@ -277,9 +277,16 @@
   transition: width 0.12s ease-out;
 }
 
+.theme-wrapper:has(#theme-contrast:checked) .reading-progress-bar {
+  background: transparent;
+  border-bottom: 1px solid #e8b4a8;
+  height: 2px;
+}
+
 .theme-wrapper:has(#theme-contrast:checked) .reading-progress-bar__fill {
-  background: var(--color-accent);
-  height: 4px;
+  background: #e8b4a8;
+  height: 2px;
+  box-shadow: 0 0 12px rgba(232, 180, 168, 0.4);
 }
 
 .article-body {
@@ -344,8 +351,8 @@
 }
 
 .theme-wrapper:has(#theme-contrast:checked) .article-section__heading {
-  border-bottom-color: var(--color-accent);
-  border-bottom-width: 2px;
+  border-bottom: 1px solid #404040;
+  color: #e8b4a8;
 }
 
 .theme-wrapper:has(#theme-contrast:checked) .article-section:nth-child(5) .article-section__heading,
@@ -354,12 +361,19 @@
 }
 
 .theme-wrapper:has(#theme-contrast:checked) .section-number {
-  color: var(--color-contrast-cyan);
+  color: #e8b4a8;
+  font-weight: 600;
 }
 
 .theme-wrapper:has(#theme-contrast:checked) .pull-quote {
-  border: 2px solid var(--color-accent);
-  background: rgba(255, 235, 59, 0.08);
+  border: 1px solid #e8b4a8;
+  background: rgba(232, 180, 168, 0.05);
+  color: #ffffff;
+}
+
+.theme-wrapper:has(#theme-contrast:checked) .pull-quote__text {
+  color: #e8b4a8;
+  font-weight: 500;
 }
 
 .article-section p {
